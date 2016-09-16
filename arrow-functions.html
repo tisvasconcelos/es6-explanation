@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  // let ueda =  {
+  //   'nome': "Ueda",
+  //   'descricao': "Um Ueda em forma de gurí",
+  //   'corridasNoAno': 20,
+  //   'adicionarCorrida': function() {
+  //     console.log(this);
+  //     this.corridasNoAno++;
+  //   }
+  // };
+
+  // let ueda = {
+  //   'nome': "Ueda",
+  //   'descricao': "Um Ueda em forma de gurí",
+  //   'corridasNoAno': 20,
+  //   'adicionarCorrida': () => {
+  //     console.log(this);
+  //     this.corridasNoAno++;
+  //   }
+  // };
+
+  // console.log(ueda.corridasNoAno);
+  // console.log(ueda.adicionarCorrida());
+  // console.log(ueda.corridasNoAno);
+
+  let service = {
+    nome: "Cael",
+    doSomething: function(callback) {
+      console.log("vai retornar", this.nome);
+      callback(this.nome);
+    }
+  };
+
+  let controller = {
+    nome: "Ueda",
+    doSomething: function(service){
+      service.doSomething(function(response) {
+        // console.log(this);
+        this.nome = response;
+      });
+    }
+  }
+
+  console.log('primeiro', controller.nome);
+  controller.doSomething(service);
+  console.log('segundo', controller.nome);
+  </script>
+</body>
+</html>
