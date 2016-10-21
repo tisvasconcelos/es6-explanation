@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promises</title>
+</head>
+<body>
+  <script>
+  // let sync = (a, b) => {
+  //   setTimeout(() => {
+  //     console.log(`Somando ${a} + ${b}`);
+  //     return a+b;
+  //   }, 5000);
+  // };
+  //
+  // let somaResult = sync(10, 15);
+  // console.log(`O resultado foi ${somaResult}`);
+
+  // let syncCallback = (a, b, callback) => {
+  //   setTimeout(() => {
+  //     console.log(`Somando ${a} + ${b}`);
+  //     if(callback && typeof callback === "function") {
+  //       callback(a+b);
+  //     }
+  //     // E se der erro???
+  //   }, 5000);
+  // };
+  //
+  // syncCallback(10, 15, somaResult => {
+  //   console.log(`O resultado foi ${somaResult}`)
+  //   syncCallback(somaResult, 100, somaResult => {
+  //     console.log(`O resultado na segunda soma foi ${somaResult}`);
+  //   });
+  // });
+
+  // let syncPromises = (a, b) => {
+  //   return new Promise((resolve, reject) => {
+  //     let soma = a+b;
+  //     setTimeout(() => {
+  //       console.log(`Somando dentro da promise ${a} + ${b}`);
+  //       if(soma <= 100) {
+  //         resolve(soma);
+  //       } else {
+  //         reject(new Error("Não foi possivel somar!"), soma);
+  //       }
+  //     }, 2000);
+  //   })
+  // };
+  //
+  // syncPromises(10, 15).then(somaResult => {
+  //   console.log(`Somando dentro da promise ${somaResult}`);
+  //   return syncPromises(somaResult, 100);
+  // }).catch((err) => {
+  //   console.error(err);
+  //   return somaResult;
+  // }).then(() => {
+  //   console.log(`Executar algum fallback?`);
+  // });
+  </script>
+</body>
+</html>
