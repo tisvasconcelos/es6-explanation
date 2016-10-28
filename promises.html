@@ -48,15 +48,44 @@
   //     }, 2000);
   //   })
   // };
-  //
+
+
   // syncPromises(10, 15).then(somaResult => {
-  //   console.log(`Somando dentro da promise ${somaResult}`);
+  //   console.log(`Resultado da soma ${somaResult}`);
   //   return syncPromises(somaResult, 100);
   // }).catch((err) => {
   //   console.error(err);
-  //   return somaResult;
   // }).then(() => {
   //   console.log(`Executar algum fallback?`);
+  // });
+
+  // syncPromises(10, 15).then(somaResult => {
+  //   console.log(`Resultado da soma ${somaResult}`);
+  //   return syncPromises(somaResult, 100);
+  // }).catch(err => {
+  //   console.error(err);
+  // }).then(() => {
+  //   console.log(`Executar algum fallback?`);
+  //   throw new Error("Não foi possivel somar!")
+  // }).catch(err => {
+  //   console.error('erro 2');
+  // }).then(() => {
+  //   console.log(`Executar outro algum fallback?`);
+  //   return "Valor X";
+  // }).then(value => {
+  //   console.log(`Fim fallback? ${value}`);
+  //   return Promise.reject('abc');
+  // }).then(lastValue => {
+  //   console.log(`Ultimo? ${lastValue}`);
+  // }).catch(err => {
+  //   console.error('erro 3');
+  // });
+
+  // syncPromises(10, 15).then(somaResult => {
+  //   console.log(`Resultado da soma ${somaResult}`);
+  //   return syncPromises(somaResult, 100);
+  // }, (err) => {
+  //   console.error(err);
   // });
   </script>
 </body>
